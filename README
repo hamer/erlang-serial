@@ -1,7 +1,15 @@
+SerialPort for Erlang
+
+This is a simple implementation pf a serialport erlang-port, which works on
+Linux and Windows.
+
+Exanples:
 SP = serial:start().
 SP ! { enumerate }.
 
+
 SP = serial:start([ { enumerate } ]).
+
 
 SP = serial:start([ { baudrate, 19200 }, { open, "/dev/ttyUSB1" } ]).
 SP ! { send, "hello" }.
