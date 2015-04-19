@@ -1,0 +1,9 @@
+SP = serial:start().
+SP ! { enumerate }.
+
+SP = serial:start([ { enumerate } ]).
+
+SP = serial:start([ { baudrate, 19200 }, { open, "/dev/ttyUSB1" } ]).
+SP ! { send, "hello" }.
+SP ! { close }.
+SP ! stop.
