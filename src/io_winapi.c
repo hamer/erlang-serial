@@ -192,20 +192,10 @@ int io_set_parity(const context_t *ctx, sparity_t parity) {
         return -1;
 
     switch (parity) {
-    case SPNONE:
-        dcb.Parity = NOPARITY;
-        break;
-
-    case SPODD:
-        dcb.Parity = ODDPARITY;
-        break;
-
-    case SPEVEN:
-        dcb.Parity = EVENPARITY;
-        break;
-
-    default:
-        return -1;
+        case SPNONE:    dcb.Parity = NOPARITY;      break;
+        case SPODD:     dcb.Parity = ODDPARITY;     break;
+        case SPEVEN:    dcb.Parity = EVENPARITY;    break;
+        default: return -1;
     }
 
     return SetCommState(ctx->fd, &dcb) ? 0 : -1;

@@ -283,13 +283,13 @@ static int io_set_params(context_t *ctx) {
     if (tcgetattr(ctx->fd, &opts) < 0)
         return -1;
 
-    opts.c_iflag = 0; //IGNPAR;
+    opts.c_iflag = 0;
     opts.c_oflag = 0;
     opts.c_cflag |= CLOCAL;
     opts.c_cflag |= CREAD;
-    opts.c_lflag = 0; //ICANON;
-    opts.c_cc[VMIN]=1;
-    opts.c_cc[VTIME]=0;
+    opts.c_lflag = 0;
+    opts.c_cc[VMIN] = 1;
+    opts.c_cc[VTIME] = 0;
 
     return tcsetattr(ctx->fd, TCSANOW, &opts);
 }
