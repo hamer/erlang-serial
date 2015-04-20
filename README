@@ -1,9 +1,9 @@
 SerialPort for Erlang
 
-This is a simple implementation pf a serialport erlang-port, which works on
+This is a simple implementation of a serialport erlang-port, which works on
 Linux and Windows.
 
-Exanples:
+Examples:
 SP = serial:start().
 SP ! { enumerate }.
 
