@@ -1,7 +1,8 @@
+#include "io.h"
+
 #ifdef _WIN32
 
 #include <stdlib.h>
-#include "io.h"
 
 static int io_set_params(context_t *ctx);
 

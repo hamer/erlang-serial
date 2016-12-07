@@ -1,3 +1,5 @@
+#include "io.h"
+
 #ifdef __unix
 
 #include <sys/types.h>
@@ -13,8 +15,6 @@
 #include <assert.h>
 #include <errno.h>
 #include <ctype.h>
-
-#include "io.h"
 
 static int io_set_params(context_t *ctx);
 
