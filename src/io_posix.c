@@ -38,7 +38,7 @@ context_t *io_open_rs232(const portconf_t *pconf) {
     if (ctx == NULL)
         return NULL;
 
-    memset(ctx, '\0', sizeof(ctx));
+    memset(ctx, '\0', sizeof(*ctx));
     int m_errno;
     if ((ctx->fd = open(pconf->path, O_RDWR | O_NOCTTY | O_NONBLOCK)) < 0
             || io_set_params(ctx) < 0

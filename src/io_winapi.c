@@ -29,7 +29,7 @@ context_t *io_open_rs232(const portconf_t *pconf) {
 
     strcat(path, pconf->path);
 
-    memset(ctx, '\0', sizeof(ctx));
+    memset(ctx, '\0', sizeof(*ctx));
     if ((ctx->fd = CreateFile(pconf->path, GENERIC_READ | GENERIC_WRITE, 0, NULL, OPEN_EXISTING, FILE_FLAG_OVERLAPPED, NULL)) == INVALID_HANDLE_VALUE
             || io_set_params(ctx) < 0
             || io_set_baudrate(ctx, pconf->baudrate) < 0
